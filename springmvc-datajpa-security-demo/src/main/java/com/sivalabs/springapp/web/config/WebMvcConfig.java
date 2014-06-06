@@ -3,21 +3,17 @@
  */
 package com.sivalabs.springapp.web.config;
 
-import java.util.Properties;
-
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import java.util.Properties;
 
 /**
  * @author Siva
@@ -36,6 +32,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter
 		registry.addViewController("login/form").setViewName("login");		
 		registry.addViewController("welcome").setViewName("welcome");
 		registry.addViewController("admin").setViewName("admin");
+		registry.addViewController("dashboard").setViewName("dashboard");
 	}
 
 	@Bean
