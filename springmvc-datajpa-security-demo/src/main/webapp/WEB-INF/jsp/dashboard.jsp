@@ -43,13 +43,16 @@
     <div class="row">
         <div class="col-md-3">
             <!-- Left -->
-            <strong>Tools</strong>
+            <strong>Dashboard Menu</strong>
             <hr>
             <ul class="nav nav-pills nav-stacked">
                 <li class="nav-header"></li>
-                <li class="active"><a href="http://bootply.com" title="The Bootstrap Playground" target="ext">Home</a></li>
+                <li class="active"><a href="http://bootply.com" title="The Bootstrap Playground" target="ext">Bootstrap Playground</a></li>
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
+                    <li><a href="${rootUrl}admin" title="Administration" <%--target="ext"--%>>Administration</a></li>
+                </sec:authorize>
                 <li><a href="/tagged/bootstrap-3">Bootstrap 3</a></li>
-                <li class="divider"></li>
+                <li class="divider">Divider</li>
                 <li><a href="/61518" title="Bootstrap 3 Panel">Panels</a></li>
                 <li><a href="/61521" title="Bootstrap 3 Icons">Glypicons</a></li>
                 <li><a href="/61523" title="Bootstrap 3 ListGroup">List Groups</a></li>
@@ -239,9 +242,7 @@
 <h2>Welcome <%=UserController.getCurrentUser().getName() %> </h2>
 <h3>Email: <sec:authentication property="name"/></h3>
 <h3>
-    <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <a href="${rootUrl}admin">Administration</a>
-    </sec:authorize>
+
 </h3>
 <p>	<a href="${rootUrl}logout">Logout</a></p>
 </body>
