@@ -5,10 +5,20 @@
 *.war
 *.ear
 
-.settings
-target
+# Eclipse
 .classpath
 .project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Maven
+target/
+dependency-reduced-pom.xml
+
 .springBeans
 
 
