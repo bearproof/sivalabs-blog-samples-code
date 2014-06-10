@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.sivalabs.springapp.config;
 
@@ -22,7 +22,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(prePostEnabled = true) 
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 //@ImportResource("classpath:applicationContext-security.xml")
 public class SecurityConfig extends WebSecurityConfigurerAdapter
 {
@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
           .password("admin")
           .roles("ADMIN","USER");
         */
-        
+
        // registry.jdbcAuthentication().dataSource(dataSource);
 		registry.userDetailsService(customUserDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }

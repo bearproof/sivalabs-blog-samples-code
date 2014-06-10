@@ -3,13 +3,13 @@
  */
 package com.sivalabs.springapp.web.config;
 
-import javax.servlet.Filter;
-
+import com.sivalabs.springapp.config.AppConfig;
+import com.sivalabs.springapp.config.SecurityConfig;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.sivalabs.springapp.config.AppConfig;
+import javax.servlet.Filter;
 
 /**
  * @author Siva
@@ -21,7 +21,7 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 	@Override
 	protected Class<?>[] getRootConfigClasses()
 	{
-		return new Class<?>[] { AppConfig.class};
+		return new Class<?>[] { SecurityConfig.class, AppConfig.class};
 	}
 
 	@Override
